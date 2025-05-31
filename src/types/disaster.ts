@@ -37,7 +37,7 @@ export interface DisasterData {
   };
 }
 
-export type DisasterType = 'earthquake' | 'flood' | 'tornadoes' | 'volcano' | 'all';
+export type DisasterType = 'earthquake' | 'flood' | 'tornadoes' | 'volcano' | 'all'; 
 
 export type Disaster = Earthquake | LocalDisaster | Volcano;
 
@@ -47,7 +47,15 @@ export interface DisasterReport {
   disaster_category: DisasterType;
   location: string;
   description: string;
-  documentation: string[];
-  created_at: number;
+  documentation: string[]; 
+  created_at: number;      
   author: string;
+  likes: number;           
 }
+
+export const disasterTypeOptions: { value: DisasterType; label: string }[] = [
+    { value: 'flood', label: 'Banjir' },
+    { value: 'earthquake', label: 'Gempa Bumi' },
+    { value: 'volcano', label: 'Gunung Berapi' },
+    { value: 'tornadoes', label: 'Angin Puting Beliung' }
+];

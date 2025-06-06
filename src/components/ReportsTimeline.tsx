@@ -132,7 +132,7 @@ export default function ReportsTimeline() {
       location: 'Bekasi, Jawa Barat',
       description: 'Banjir setinggi 1 meter melanda perumahan Griya Indah sejak pagi tadi. Beberapa rumah terendam dan warga mulai mengungsi ke tempat yang lebih tinggi. Diperlukan bantuan perahu karet dan makanan untuk evakuasi.',
       documentation: ['foto1.jpg', 'foto2.jpg'],
-      created_at: Date.now() - 2 * 60 * 60 * 1000, // 2 hours ago
+      created_at: Date.now() - 2 * 60 * 60 * 1000, 
       author: 'Ahmad Wahyudi'
     },
     {
@@ -142,7 +142,7 @@ export default function ReportsTimeline() {
       location: 'Lombok Timur, NTB',
       description: 'Gempa berkekuatan 5.2 SR mengguncang Lombok Timur pagi ini. Beberapa bangunan mengalami retak-retak. Masyarakat panik dan keluar rumah. Belum ada laporan korban jiwa, namun perlu waspada terhadap gempa susulan.',
       documentation: ['gempa1.jpg'],
-      created_at: Date.now() - 4 * 60 * 60 * 1000, // 4 hours ago
+      created_at: Date.now() - 4 * 60 * 60 * 1000,
       author: 'Siti Nurhaliza'
     },
     {
@@ -152,7 +152,7 @@ export default function ReportsTimeline() {
       location: 'Klaten, Jawa Tengah',
       description: 'Angin puting beliung menerjang Desa Sidoarum, merusak 45 rumah dan menumbangkan pohon-pohon besar. 3 orang luka ringan dan puluhan keluarga kehilangan tempat tinggal. Dibutuhkan tenda darurat dan bantuan medis.',
       documentation: ['tornado1.jpg', 'tornado2.jpg', 'tornado3.jpg'],
-      created_at: Date.now() - 6 * 60 * 60 * 1000, // 6 hours ago
+      created_at: Date.now() - 6 * 60 * 60 * 1000, 
       author: 'Budi Santoso'
     },
     {
@@ -162,7 +162,7 @@ export default function ReportsTimeline() {
       location: 'Sleman, Yogyakarta',
       description: 'Status Gunung Merapi dinaikkan menjadi Siaga (Level III). Terdeteksi peningkatan aktivitas vulkanik dengan hembusan abu tipis. Warga di radius 3 km diminta bersiap untuk evakuasi. Masker dan air bersih diperlukan.',
       documentation: ['merapi1.jpg'],
-      created_at: Date.now() - 8 * 60 * 60 * 1000, // 8 hours ago
+      created_at: Date.now() - 8 * 60 * 60 * 1000, 
       author: 'Dr. Suryanto'
     },
     {
@@ -172,7 +172,7 @@ export default function ReportsTimeline() {
       location: 'Jakarta Timur, DKI Jakarta',
       description: 'Banjir bandang akibat luapan Kali Ciliwung merendam kawasan Kampung Melayu. Ketinggian air mencapai 2 meter. Ribuan warga mengungsi ke tempat yang lebih aman. Listrik padam di sebagian wilayah.',
       documentation: ['ciliwung1.jpg', 'ciliwung2.jpg'],
-      created_at: Date.now() - 12 * 60 * 60 * 1000, // 12 hours ago
+      created_at: Date.now() - 12 * 60 * 60 * 1000, 
       author: 'Maria Susilowati'
     }
   ]);

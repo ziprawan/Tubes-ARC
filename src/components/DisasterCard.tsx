@@ -112,7 +112,6 @@ export default function DisasterCard({ disaster }: DisasterCardProps) {
     <div className={`relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border ${theme.border} bg-gradient-to-br ${theme.gradient} group hover:scale-[1.02]`}>
       
       <div className="relative p-6">
-        {/* Header */}        {/* Header */}
         <div className="flex items-start space-x-4 mb-4">
           <div className={`flex-shrink-0 p-3 rounded-lg ${theme.iconBg} ${theme.iconColor}`}>
             {getDisasterIcon(disaster.type)}
@@ -127,7 +126,8 @@ export default function DisasterCard({ disaster }: DisasterCardProps) {
               <span>{timeAgo}</span>
             </div>
           </div>
-        </div>        {/* Lokasi */}
+        </div>        
+        {/* Lokasi */}
         <div className="mb-4">
           <h4 className="text-lg font-medium text-gray-900 mb-2 line-clamp-2">
             {formatLocationName(disaster.location_name)}
@@ -151,7 +151,8 @@ export default function DisasterCard({ disaster }: DisasterCardProps) {
             <span>Lihat Detail</span>
             <ExternalLink className="h-3 w-3 ml-1" />
           </button>        </div>
-      </div>      {/* Modal - Menggunakan Portal untuk render di luar kontainer kartu */}
+      </div>      
+      {/* Modal - Menggunakan Portal untuk render di luar kontainer kartu */}
       <Portal>
         <DisasterDetailModal
           isModalOpen={isModalOpen}

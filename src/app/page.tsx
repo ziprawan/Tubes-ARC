@@ -55,7 +55,7 @@ export default function Home() {
         allDisasters = allDisasters.filter(disaster => disaster.type === type);
       }
 
-      // Filter by location if query is provided
+      // Filter by location 
       if (query.trim()) {
         allDisasters = allDisasters.filter(disaster =>
           disaster.location_name.toLowerCase().includes(query.toLowerCase())
@@ -88,7 +88,7 @@ export default function Home() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              DisasterAlert Indonesia
+              Nusantara Alert Indonesia
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
               Sistem Informasi dan Manajemen Bencana Real-time untuk Indonesia

@@ -21,7 +21,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Shield className="h-8 w-8 text-emerald-400" />
-              <span className="text-white text-xl font-bold">DisasterAlert</span>
+              <span className="text-white text-xl font-bold">Nusantara Alert</span>
             </Link>
           </div>
 

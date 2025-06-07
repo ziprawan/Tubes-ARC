@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { AlertTriangle, X, Bell } from 'lucide-react';
-import { Disaster } from '@/types/disaster';
+import { Disaster } from "@/types/disaster";
+import { Bell, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface NotificationBannerProps {
   disasters: Disaster[];
@@ -15,12 +15,12 @@ export default function NotificationBanner({ disasters }: NotificationBannerProp
   useEffect(() => {
     if (disasters.length > 0) {
       // Show the most recent disaster
-      const mostRecent = disasters.reduce((latest, current) => 
+      const mostRecent = disasters.reduce((latest, current) =>
         current.incident_time > latest.incident_time ? current : latest
       );
-      
+
       // Only show if it's within the last 24 hours
-      const dayAgo = Date.now() - (24 * 60 * 60 * 1000);
+      const dayAgo = Date.now() - 24 * 60 * 60 * 1000;
       if (mostRecent.incident_time > dayAgo) {
         setCurrentDisaster(mostRecent);
         setIsVisible(true);
@@ -32,31 +32,31 @@ export default function NotificationBanner({ disasters }: NotificationBannerProp
 
   const getDisasterIcon = (type: string) => {
     switch (type) {
-      case 'earthquake':
-        return '🌍';
-      case 'volcano':
-        return '🌋';
-      case 'flood':
-        return '🌊';
-      case 'tornadoes':
-        return '🌪️';
+      case "earthquake":
+        return "🌍";
+      case "volcano":
+        return "🌋";
+      case "flood":
+        return "🌊";
+      case "tornadoes":
+        return "🌪️";
       default:
-        return '⚠️';
+        return "⚠️";
     }
   };
 
   const getDisasterLabel = (type: string) => {
     switch (type) {
-      case 'earthquake':
-        return 'Gempa Bumi';
-      case 'volcano':
-        return 'Gunung Berapi';
-      case 'flood':
-        return 'Banjir';
-      case 'tornadoes':
-        return 'Angin Puting Beliung';
+      case "earthquake":
+        return "Gempa Bumi";
+      case "volcano":
+        return "Gunung Berapi";
+      case "flood":
+        return "Banjir";
+      case "tornadoes":
+        return "Angin Puting Beliung";
       default:
-        return 'Bencana';
+        return "Bencana";
     }
   };
   return (
@@ -69,16 +69,10 @@ export default function NotificationBanner({ disasters }: NotificationBannerProp
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
               <span className="text-lg">{getDisasterIcon(currentDisaster.type)}</span>
-              <h3 className="font-semibold text-sm">
-                {getDisasterLabel(currentDisaster.type)} Terbaru
-              </h3>
+              <h3 className="font-semibold text-sm">{getDisasterLabel(currentDisaster.type)} Terbaru</h3>
             </div>
-            <p className="text-sm opacity-90">
-              {currentDisaster.location_name}
-            </p>
-            <p className="text-xs opacity-75 mt-1">
-              {new Date(currentDisaster.incident_time).toLocaleString('id-ID')}
-            </p>
+            <p className="text-sm opacity-90">{currentDisaster.location_name}</p>
+            <p className="text-xs opacity-75 mt-1">{new Date(currentDisaster.incident_time).toLocaleString("id-ID")}</p>
           </div>
           <button
             onClick={() => setIsVisible(false)}

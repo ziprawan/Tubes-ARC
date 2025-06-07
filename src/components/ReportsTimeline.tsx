@@ -1,20 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { DisasterReport, DisasterType } from '@/types/disaster';
 import { formatDistanceToNow } from 'date-fns';
 import { id } from 'date-fns/locale';
-import { 
-  FileText, 
-  MapPin, 
-  Clock, 
-  User, 
+import {
+  AlertTriangle,
+  Clock,
+  FileText,
   Filter,
   Heart,
+  MapPin,
   MessageCircle,
-  Share2,
-  AlertTriangle
+  Share2
 } from 'lucide-react';
-import { DisasterReport, DisasterType } from '@/types/disaster';
+import { useState } from 'react';
 
 interface ReportCardProps {
   report: DisasterReport;

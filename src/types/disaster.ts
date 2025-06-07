@@ -1,25 +1,19 @@
-export interface Earthquake {
-  type: 'earthquake';
+export interface BaseDisaster {
   coordinates: [number, number];
   location_name: string;
   incident_time: number;
-  source: string;
 }
 
-export interface LocalDisaster {
-  type: 'flood' | 'tornadoes';
-  coordinates: [number, number];
-  location_name: string;
-  incident_time: number;
-  source: string;
+export interface Earthquake extends BaseDisaster {
+  type: "earthquake";
 }
 
-export interface Volcano {
-  type: 'volcano';
-  coordinates: [number, number];
-  location_name: string;
-  incident_time: number;
-  source: string;
+export interface LocalDisaster extends BaseDisaster {
+  type: "flood" | "tornadoes";
+}
+
+export interface Volcano extends BaseDisaster {
+  type: "volcano";
 }
 
 export interface DisasterData {
@@ -37,7 +31,7 @@ export interface DisasterData {
   };
 }
 
-export type DisasterType = 'earthquake' | 'flood' | 'tornadoes' | 'volcano' | 'all';
+export type DisasterType = "earthquake" | "flood" | "tornadoes" | "volcano" | "all";
 
 export type Disaster = Earthquake | LocalDisaster | Volcano;
 

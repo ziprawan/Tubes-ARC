@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { AlertTriangle, RefreshCw } from 'lucide-react';
-import DisasterCard from './DisasterCard';
-import DisasterCardSkeleton from './DisasterCardSkeleton';
-import { getRecentDisasters } from '@/services/disasterApi';
-import { formatLocationName } from '@/utils/locationFormatter';
+import { getRecentDisasters } from "@/services/disasterApi";
+import { Disaster } from "@/types/disaster";
+import { AlertTriangle, RefreshCw } from "lucide-react";
+import { useEffect, useState } from "react";
+import DisasterCard from "./DisasterCard";
+import DisasterCardSkeleton from "./DisasterCardSkeleton";
 
 export default function RecentDisasters() {
-  const [disasters, setDisasters] = useState<any[]>([]);
+  const [disasters, setDisasters] = useState<Disaster[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,8 +19,8 @@ export default function RecentDisasters() {
       const recentDisasters = await getRecentDisasters(8);
       setDisasters(recentDisasters);
     } catch (err) {
-      setError('Gagal memuat data bencana terbaru');
-      console.error('Error fetching recent disasters:', err);
+      setError("Gagal memuat data bencana terbaru");
+      console.error("Error fetching recent disasters:", err);
     } finally {
       setLoading(false);
     }
@@ -28,11 +28,12 @@ export default function RecentDisasters() {
 
   useEffect(() => {
     fetchDisasters();
-    
+
     // Auto-refresh every 5 minutes
     const interval = setInterval(fetchDisasters, 5 * 60 * 1000);
     return () => clearInterval(interval);
-  }, []);  if (loading) {
+  }, []);
+  if (loading) {
     return (
       <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
         <div className="flex items-center justify-between mb-6">
@@ -45,7 +46,7 @@ export default function RecentDisasters() {
             Memuat...
           </div>
         </div>
-          <div className="space-y-4">
+        <div className="space-y-4">
           <div className="flex items-center justify-between text-sm text-gray-600">
             <div className="h-4 bg-blue-100 rounded w-48 animate-pulse"></div>
             <div className="h-6 bg-emerald-100 rounded-full w-32 animate-pulse"></div>
@@ -58,7 +59,8 @@ export default function RecentDisasters() {
         </div>
       </div>
     );
-  }  if (error) {
+  }
+  if (error) {
     return (
       <div className="bg-white rounded-lg shadow-md p-8 border border-red-100">
         <div className="text-center">
@@ -73,7 +75,8 @@ export default function RecentDisasters() {
         </div>
       </div>
     );
-  }  return (
+  }
+  return (
     <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-gray-800 flex items-center">
@@ -85,19 +88,15 @@ export default function RecentDisasters() {
           disabled={loading}
           className="flex items-center px-4 py-2 text-sm bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg transition-colors border border-blue-200"
         >
-          <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
+          <RefreshCw className={`h-4 w-4 mr-2 ${loading ? "animate-spin" : ""}`} />
           Perbarui
         </button>
       </div>
-        {disasters.length === 0 ? (
+      {disasters.length === 0 ? (
         <div className="text-center py-12">
           <AlertTriangle className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-          <p className="text-gray-500 text-lg font-medium">
-            Tidak ada data bencana tersedia.
-          </p>
-          <p className="text-gray-400 text-sm mt-2">
-            Coba perbarui data atau periksa koneksi internet Anda.
-          </p>
+          <p className="text-gray-500 text-lg font-medium">Tidak ada data bencana tersedia.</p>
+          <p className="text-gray-400 text-sm mt-2">Coba perbarui data atau periksa koneksi internet Anda.</p>
         </div>
       ) : (
         <div className="space-y-4">

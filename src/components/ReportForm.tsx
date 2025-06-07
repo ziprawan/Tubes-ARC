@@ -1,56 +1,56 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { PlusCircle, MapPin, FileText, Camera, Send } from 'lucide-react';
-import { DisasterType } from '@/types/disaster';
+import { DisasterType } from "@/types/disaster";
+import { Camera, FileText, MapPin, PlusCircle, Send } from "lucide-react";
+import { useState } from "react";
 
 export default function ReportForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
-    title: '',
-    disaster_category: 'flood' as DisasterType,
-    location: '',
-    description: '',
-    author: '',
+    title: "",
+    disaster_category: "flood" as DisasterType,
+    location: "",
+    description: "",
+    author: "",
   });
-  const [files, setFiles] = useState<FileList | null>(null);
+  const [, setFiles] = useState<FileList | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const disasterTypes = [
-    { value: 'earthquake', label: 'Gempa Bumi' },
-    { value: 'volcano', label: 'Gunung Berapi' },
-    { value: 'flood', label: 'Banjir' },
-    { value: 'tornadoes', label: 'Angin Puting Beliung' },
+    { value: "earthquake", label: "Gempa Bumi" },
+    { value: "volcano", label: "Gunung Berapi" },
+    { value: "flood", label: "Banjir" },
+    { value: "tornadoes", label: "Angin Puting Beliung" },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     // Reset form
     setFormData({
-      title: '',
-      disaster_category: 'flood',
-      location: '',
-      description: '',
-      author: '',
+      title: "",
+      disaster_category: "flood",
+      location: "",
+      description: "",
+      author: "",
     });
     setFiles(null);
     setIsSubmitting(false);
     setIsOpen(false);
-    
+
     // Show success message (you can implement toast/notification here)
-    alert('Laporan berhasil dikirim! Terima kasih telah berkontribusi.');
+    alert("Laporan berhasil dikirim! Terima kasih telah berkontribusi.");
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -77,16 +77,11 @@ export default function ReportForm() {
               <FileText className="h-6 w-6 mr-2" />
               Laporkan Bencana
             </h2>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-400 hover:text-gray-600 text-2xl"
-            >
+            <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-gray-600 text-2xl">
               ×
             </button>
           </div>
-          <p className="text-gray-600 mt-2">
-            Bantu komunitas dengan melaporkan kondisi bencana di sekitar Anda
-          </p>
+          <p className="text-gray-600 mt-2">Bantu komunitas dengan melaporkan kondisi bencana di sekitar Anda</p>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
@@ -199,9 +194,7 @@ export default function ReportForm() {
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
               />
             </div>
-            <p className="text-xs text-gray-500 mt-1">
-              Upload foto atau video untuk mendukung laporan Anda (opsional)
-            </p>
+            <p className="text-xs text-gray-500 mt-1">Upload foto atau video untuk mendukung laporan Anda (opsional)</p>
           </div>
 
           {/* Submit Button */}

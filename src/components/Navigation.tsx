@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Home, Shield, FileText, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { FileText, Home, Menu, Shield, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navigation = [
-  { name: 'Home', href: '/', icon: Home },
-  { name: 'Preparation Guides', href: '/preparation', icon: Shield },
-  { name: 'Reporting System', href: '/reports', icon: FileText },
+  { name: "Home", href: "/", icon: Home },
+  { name: "Preparation Guides", href: "/preparation", icon: Shield },
+  { name: "Reporting System", href: "/reports", icon: FileText },
 ];
 
 export default function Navigation() {
@@ -33,10 +33,9 @@ export default function Navigation() {
               return (
                 <Link
                   key={item.name}
-                  href={item.href}                  className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'bg-emerald-600 text-white'
-                      : 'text-gray-200 hover:bg-emerald-700 hover:text-white'
+                  href={item.href}
+                  className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive ? "bg-emerald-600 text-white" : "text-gray-200 hover:bg-emerald-700 hover:text-white"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -48,15 +47,8 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-gray-200"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white hover:text-gray-200">
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -72,10 +64,9 @@ export default function Navigation() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                      isActive
-                        ? 'bg-emerald-600 text-white'
-                        : 'text-gray-200 hover:bg-emerald-700 hover:text-white'
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                      isActive ? "bg-emerald-600 text-white" : "text-gray-200 hover:bg-emerald-700 hover:text-white"
                     }`}
                   >
                     <Icon className="h-5 w-5" />

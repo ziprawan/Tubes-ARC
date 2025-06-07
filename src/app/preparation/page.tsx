@@ -96,18 +96,18 @@ export default function PreparationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cornsilk to-white">      {/* Hero Section */}
-      <div className="bg-secondary text-white py-12">
+      <div className="bg-secondary text-[#15202b] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <div className="bg-white p-4 rounded-full">
-                <Shield className="h-12 w-12 text-secondary" />
+              <div className="bg-[#15202b] p-4 rounded-full">
+                <Shield className="h-12 w-12 text-white" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Panduan Kesiapsiagaan Bencana
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-[#15202b] mb-8 max-w-3xl mx-auto">
               Persiapkan diri Anda dan keluarga menghadapi berbagai jenis bencana alam
             </p>
           </div>

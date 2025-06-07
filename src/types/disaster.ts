@@ -44,4 +44,12 @@ export interface DisasterReport {
   documentation: string[];
   created_at: number;
   author: string;
+  likes: number;
 }
+
+export const disasterTypeOptions: { value: DisasterType; label: string }[] = [
+  { value: "flood", label: "Banjir" },
+  { value: "earthquake", label: "Gempa Bumi" },
+  { value: "volcano", label: "Gunung Berapi" },
+  { value: "tornadoes", label: "Angin Puting Beliung" },
+];

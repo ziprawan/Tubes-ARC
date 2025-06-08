@@ -18,10 +18,15 @@ NUSANTARA ALERT adalah aplikasi web yang bertujuan untuk memberikan informasi te
 ## Fitur Utama
 
 1. **Halaman Utama**
+
    Menampilkan daftar bencana terbaru yang terjadi di Indonesia, dengan sumber data dari BMKG, NASA, dan AHA Centre.
+
 2. **Halaman Petunjuk Persiapan**
+
    Berisi panduan persiapan yang harus dilakukan untuk setiap jenis bencana, lengkap dengan nomor telepon darurat yang dapat dihubungi.
+
 3. **Halaman Lapor Bencana**
+
    Memungkinkan pengguna untuk melaporkan bencana yang terjadi di sekitar mereka. Laporan dapat didukung oleh komunitas melalui fitur tanda setuju.
 
 ## Teknologi

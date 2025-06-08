@@ -120,8 +120,10 @@ export default function ReportsPage() {
                 <FileText className="h-10 w-10 sm:h-12 sm:w-12 text-[#15202b]" />
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Sistem Pelaporan Bencana</h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 dark:text-white text-[#374151] text-primary">
+              Sistem Pelaporan Bencana
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl dark:text-gray-400 text-gray-600 mb-8 max-w-3xl mx-auto">
               Berbagi informasi dan saling membantu dalam situasi darurat bencana
             </p>
           </div>
